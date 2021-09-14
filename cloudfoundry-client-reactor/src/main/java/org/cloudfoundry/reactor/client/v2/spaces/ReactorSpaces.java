@@ -161,6 +161,7 @@ public final class ReactorSpaces extends AbstractClientV2Operations implements S
 
     @Override
     public Mono<GetSpaceSummaryResponse> getSummary(GetSpaceSummaryRequest request) {
+        System.out.println(request.getSpaceId());
         return get(request, GetSpaceSummaryResponse.class, builder -> builder.pathSegment("spaces", request.getSpaceId(), "summary"))
             .checkpoint();
     }
